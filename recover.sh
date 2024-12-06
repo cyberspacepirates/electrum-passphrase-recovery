@@ -1,3 +1,5 @@
+#!/usr/bin/bash
+
 filename="wordlist.txt"
 
 SEED="magic canoe normal aware extend earn jewel fresh detail peanut dice viable"
@@ -13,7 +15,7 @@ do
   electrum load_wallet -w ~/.electrum/wallets/default_wallet > /dev/null
   address=$(electrum getunusedaddress)
   if [[ "$address" == *"$end_address" ]]; then
-    echo "The wallet was found, the passphrase is: $line"
+    echo "The wallet was found, the passphrase is: ($line)"
     break
   else
     electrum close_wallet > /dev/null
