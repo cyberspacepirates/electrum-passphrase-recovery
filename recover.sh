@@ -12,7 +12,7 @@ do
   electrum restore "$SEED" --passphrase "$line" > /dev/null
   electrum load_wallet -w ~/.electrum/wallets/default_wallet > /dev/null
   address=$(electrum getunusedaddress)
-  if [["$address" == *"$end_address"]]; then
+  if [[ "$address" == *"$end_address" ]]; then
     echo "The wallet was found, the passphrase is: $line"
     break
   else
